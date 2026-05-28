@@ -6,6 +6,15 @@ sources:
     schema: landing
     tables:
       - name: orders
+        # config:
+          # freshness:
+            # warn_after:
+              # count: 365
+              # period: day
+            # error_after:
+              # count: 1460
+              # period: day
+          # loaded_at_field: created_at
       - name: products
       - name: reviews
       - name: users
