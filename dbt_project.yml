@@ -42,4 +42,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 #      +materialized: table
 
 models:
-  +materialized: table
+  dbt_databricks_project:
+    +materialized: table
+    gold:
+      +materialized: view
