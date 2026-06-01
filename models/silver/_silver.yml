@@ -1,0 +1,19 @@
+version: 2
+
+unit_tests:
+  - expect:
+      format: csv
+      rows: |
+        id,order_amount
+        1,1000.00
+        2,10.00
+      
+    model: silver_orders
+    name: test_order_amount_calc
+    given:
+      - input: ref("bronze_orders")
+        format: csv
+        rows: |
+          id,quantity,unit_price
+          1,10,100.00
+          2,2,5.00
