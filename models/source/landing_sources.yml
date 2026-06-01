@@ -26,6 +26,14 @@ sources:
               - not_null:
                   config:
                     severity: warn
+          
+          - name: unit_price
+            tests:
+              - assert_non_negative
+
+          - name: quantity
+            tests:
+              - assert_non_negative
       - name: products
         columns:
         - name: id
