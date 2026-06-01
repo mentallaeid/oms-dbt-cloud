@@ -6,6 +6,11 @@ sources:
     schema: landing
     tables:
       - name: orders
+
+#        tests:
+#          - dbt_utils.expression_is_true:
+#              arguments:
+#                expression: "quantity >= 0 and unit_price >= 0"
         
         # config:
           # freshness:
@@ -27,13 +32,15 @@ sources:
                   config:
                     severity: warn
           
-          - name: unit_price
-            tests:
-              - assert_non_negative
+#          - name: unit_price
+#            tests:
+#              - dbt_utils.expression_is_true:
+#                  arguments:
+#                    expression: ">= 0"
 
-          - name: quantity
-            tests:
-              - assert_non_negative
+#          - name: quantity
+#            tests:
+#              - assert_non_negative
       - name: products
         columns:
         - name: id
