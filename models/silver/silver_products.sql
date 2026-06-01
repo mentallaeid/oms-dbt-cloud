@@ -5,4 +5,5 @@ SELECT id,
     ean,
     vendor,
     price
-FROM {{ ref("bronze_products") }}
+FROM {{ ref("products_snapshot") }}
+WHERE dbt_valid_to is null
